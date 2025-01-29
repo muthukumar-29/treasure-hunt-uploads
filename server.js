@@ -25,6 +25,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+app.get("/message", (req,res)=>{
+  res.send("hello");
+})
+
 // Route to handle general file uploads (existing functionality)
 app.post("/upload", upload.single("file"), (req, res) => {
   if (!req.file) {
